@@ -27,7 +27,7 @@ jobs:
 
       - name: Run the Postman collection with Newman
         run: |
-          newman run "Inwarranty-Flow Collection CSVFile.postman_collection.json" \
+          newman run "Phoenix Inwarrenty Flow Practice.postman_collection.json" \
             -e "QA.postman_environment.json" \
             -r cli,htmlextra \
             --reporter-htmlextra-export "./newman/index.html"
