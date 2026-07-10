@@ -38,3 +38,30 @@ jobs:
         with:
           name: Newman Report
           path: newman/*.html
+          
+      - name: Creating github page branch
+        if: always()
+        uses: peaceiris/actions-github-pages@v3.1.12
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: newman/
+
+      - name: Send Email Notification
+        if: always()
+        uses: dawidd6/action-send-mail@v18
+        with:
+           server_address: smtp.gmail.com
+           server_port: 465
+           secure: true
+           username: ${{secrets.EMAIL_USERNAME}}
+           password: ${{secrets.EMAIL_PASSWORD}}
+           subject:  Phoneix Inwarranty Practice Flow Test ExecutionNotification
+           to: manasiavachat14@gmail.com
+           from:  ${{secrets.EMAIL_USERNAME}}
+           body: |
+                Hi,
+                Phoneix Inwarranty Flow tests has been executed. The Report has been published and the URL
+              
+        
+
+          
