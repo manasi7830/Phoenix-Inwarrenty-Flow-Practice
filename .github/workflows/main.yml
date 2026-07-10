@@ -60,7 +60,7 @@ jobs:
            from:  ${{secrets.EMAIL_USERNAME}}
            body: |
                 Hi,
-                Phoneix Inwarranty Flow tests has been executed. The Report has been published and the URL
+                Phoneix Inwarranty Flow tests has been executed. The Report has been published and the URL:https://manasi7830.github.io/Phoenix-Inwarrenty-Flow-Practice/
               
         
 
